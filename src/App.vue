@@ -1,11 +1,17 @@
-<script setup>
+<script>
+  import Head from './components/Head.vue'
 
+  export default {
+  components: {
+    Head
+  }
+};
 </script>
 
 <template>
-  <h1>ahoj</h1>
+  <Head />
 </template>
 
 <style scoped>
-
+  
 </style>
