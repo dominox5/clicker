@@ -1,5 +1,10 @@
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url('./assets/fonts/Montserrat/Montserrat-Regular.ttf');
+}
 *{
     margin: 0;
+    font-family: 'Montserrat-Regular';
 }
 #app{
     width: 100%;
