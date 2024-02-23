@@ -1,10 +1,17 @@
-<script setup>
+<script>
+  export default {
+  data() {
+    return {
+      
+    };
+  },
   
+};
 </script>
 
 <template>
   <div class="Score">
-
+    <p>Your score: {{score}}</p>
   </div>
 </template>
 
@@ -12,5 +19,11 @@
   .Score{
     grid-row: 7 / 9;
     grid-column: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .Score p{
+    font-size: 80px;
   }
 </style>
