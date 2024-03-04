@@ -5,6 +5,7 @@
       
     };
   },
+  props: ['score']
   
 };
 </script>

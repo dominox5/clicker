@@ -8,6 +8,9 @@ export default {
   methods: {
     rotateAxe() {
       this.isAxeRotated = !this.isAxeRotated;
+    },
+    PlusToScore(){
+      this.$emit('plusToScore')
     }
   }
 };
@@ -18,6 +21,7 @@ export default {
     <img class="ore" src="../assets/images/ore.svg" alt="" />
     <img
       class="axe"
+      @click="PlusToScore"
       :style="{ transform: isAxeRotated ? 'rotate(-20deg)' : 'rotate(90deg)' }"
       @mousedown="rotateAxe"
       @mouseup="rotateAxe"
@@ -40,7 +44,7 @@ export default {
   position: relative;
   right: 100px;
   transform: rotate(110deg);
-  transition: transform 0.08s ease-in-out;
+  transition: transform 0.08s;
 }
 .ore{
   height: 250px;

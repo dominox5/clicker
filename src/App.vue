@@ -14,6 +14,16 @@
     Score,
     Settings,
     Store
+  },
+  data(){
+      score: 0,
+    };
+  },
+  methods:{
+    plusToScore(){
+      this.score += 1;
+      console.log(this.score)
+    }
   }
 };
 </script>
@@ -21,8 +31,8 @@
 <template>
   <Head />
   <Inventory />
-  <Pick />
-  <Score />
+  <Pick @plusToScore="plusToScore" />
+  <Score :score="score"/>
   <Settings />
   <Store />
 </template>
