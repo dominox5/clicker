@@ -16,6 +16,7 @@
     Store
   },
   data(){
+    return{
       score: 0,
     };
   },
