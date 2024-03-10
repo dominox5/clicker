@@ -2,6 +2,7 @@
   import Head from './components/Head.vue'
   import Inventory from './components/Inventory.vue'
   import Pick from './components/Pick.vue'
+  import Price from './components/price.vue'
   import Score from './components/Score.vue'
   import Settings from './components/Settings.vue'
   import Store from './components/Store.vue'
@@ -13,7 +14,8 @@
     Pick,
     Score,
     Settings,
-    Store
+    Store,
+    Price
   },
   data(){
     return{
@@ -31,6 +33,7 @@
 
 <template>
   <Head />
+  <Price />
   <Inventory />
   <Pick @plusToScore="plusToScore" />
   <Score :score="score"/>

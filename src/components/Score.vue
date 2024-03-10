@@ -12,7 +12,14 @@
 
 <template>
   <div class="Score">
-    <p>Your score: {{score}}</p>
+    <div class="flex">
+      <img src="../assets/images/gold-ingots.svg" alt="">
+      <p>{{score}} Kg</p>
+    </div>
+    <div class="flex">
+      <img src="../assets/images/dollars.svg" alt="">
+      <p>0$</p>
+    </div>
   </div>
 </template>
 
@@ -23,8 +30,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
   }
   .Score p{
     font-size: 80px;
+  }
+  img{
+    height: 80px;
+  }
+  .flex{
+    display: flex;
+    align-items: center;
+    gap: 30px;
   }
 </style>

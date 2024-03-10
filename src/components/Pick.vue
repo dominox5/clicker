@@ -6,27 +6,23 @@ export default {
     };
   },
   methods: {
-    rotateAxe() {
+    PlusToScore() {
+      this.$emit('plusToScore');
       this.isAxeRotated = !this.isAxeRotated;
-    },
-    PlusToScore(){
-      this.$emit('plusToScore')
+      setTimeout(() => {
+        this.isAxeRotated = !this.isAxeRotated;
+      }, 100);
     }
   }
 };
 </script>
 
 <template>
-  <div class="pick">
-    <img class="ore" src="../assets/images/ore.svg" alt="" />
-    <img
+  <div class="pick" @mousedown="PlusToScore">
+    <div class="ore"/>
+    <div
       class="axe"
-      @click="PlusToScore"
-      :style="{ transform: isAxeRotated ? 'rotate(-20deg)' : 'rotate(90deg)' }"
-      @mousedown="rotateAxe"
-      @mouseup="rotateAxe"
-      src="../assets/images/axe.svg"
-      alt=""
+      :style="{ transform: isAxeRotated ? 'rotate(-10deg)' : 'rotate(90deg)' }"
     />
   </div>
 </template>
@@ -38,15 +34,22 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 .axe {
   height: 250px;
+  width: 250px;
   position: relative;
-  right: 100px;
-  transform: rotate(110deg);
+  right: 250px;
+  transform: rotate(100deg);
   transition: transform 0.08s;
+  transform-origin: bottom right;
+  background-image: url("../assets/images/axe.svg");
 }
 .ore{
-  height: 250px;
+  height: 400px;
+  width: 600px;
+  background-repeat: no-repeat;
+  background-image: url("../assets/images/ore.svg");
 }
 </style>
