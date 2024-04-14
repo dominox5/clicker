@@ -29,6 +29,7 @@ export default {
 
 <style scoped>
 .pick {
+  order: 0;
   grid-column: 2;
   grid-row: 3 / 7;
   display: flex;

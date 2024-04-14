@@ -17,5 +17,6 @@
   }
   .head h1{
     font-size: 80px;
+    text-align: center;
   }
 </style>
