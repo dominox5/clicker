@@ -19,4 +19,9 @@
     font-size: 80px;
     text-align: center;
   }
+  @media (max-width: 1100px){
+    .head h1{
+      font-size: 50px;
+    }
+  }
 </style>

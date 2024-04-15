@@ -22,6 +22,7 @@
     grid-column: 1;
     grid-row: 2 / 9;
     text-align: center;
+    order: 1;
   }
   h2{
     font-size: 50px;

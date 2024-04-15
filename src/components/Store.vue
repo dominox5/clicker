@@ -23,6 +23,7 @@
     grid-column: 3;
     grid-row: 2 / 9;
     text-align: center;
+    order: 2;
   }
   h2{
     font-size: 50px;

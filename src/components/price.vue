@@ -21,6 +21,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    text-align: center;
+    order: 3;
   }
   .gold{
     height: 120px;

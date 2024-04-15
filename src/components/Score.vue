@@ -1,11 +1,11 @@
 <script>
+import { useClicker } from '/src/components/stores/store.js';
   export default {
   data() {
     return {
-      
+      clicker: useClicker()
     };
   },
-  props: ['score']
   
 };
 </script>
@@ -14,7 +14,7 @@
   <div class="Score">
     <div class="flex">
       <img src="../assets/images/gold-ingots.svg" alt="">
-      <p>{{score}} Kg</p>
+      <p>{{clicker.balance}} Kg</p>
     </div>
     <div class="flex">
       <img src="../assets/images/dollars.svg" alt="">

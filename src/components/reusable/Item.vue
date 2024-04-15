@@ -53,8 +53,8 @@ export default {
     text-align: center;
   }
   img{
-    height: 90px;
-    width: 90px;
+    height: 95%;
+    
   }
   .cost{
     font-size: 40px;

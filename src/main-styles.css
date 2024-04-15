@@ -16,6 +16,7 @@
   @media (max-width: 1100px){
     #app{
         display: flex;
+        
         flex-direction: column;
     }
   }

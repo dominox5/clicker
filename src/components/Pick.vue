@@ -1,13 +1,16 @@
 <script>
+import { useClicker } from '/src/components/stores/store.js';
 export default {
   data() {
     return {
-      isAxeRotated: false
+      isAxeRotated: false,
+      clicker: useClicker()
     };
   },
   methods: {
     PlusToScore() {
-      this.$emit('plusToScore');
+      this.clicker.balance++;
+      localStorage.setItem('clicker_balance', this.clicker.balance.toString())
       this.isAxeRotated = !this.isAxeRotated;
       setTimeout(() => {
         this.isAxeRotated = !this.isAxeRotated;
@@ -19,7 +22,8 @@ export default {
 
 <template>
   <div class="pick" @mousedown="PlusToScore">
-    <div class="ore"/>
+    
+    <img src="../assets/images/ore.svg" class="ore" alt="">
     <div
       class="axe"
       :style="{ transform: isAxeRotated ? 'rotate(-10deg)' : 'rotate(90deg)' }"
@@ -46,11 +50,23 @@ export default {
   transition: transform 0.08s;
   transform-origin: bottom right;
   background-image: url("../assets/images/axe.svg");
+  background-repeat: no-repeat;
 }
 .ore{
-  height: 400px;
+  height: 90%;
   width: 600px;
-  background-repeat: no-repeat;
-  background-image: url("../assets/images/ore.svg");
+  /*background-repeat: no-repeat;
+  background-image: url("../assets/images/ore.svg");*/
+}
+@media (max-width: 785px) {
+  .axe{
+    display: none;
+  }
+  .ore{
+  transition: transform 0.3s ease; /* Přechod pro animaci změny transformace */
+  }
+  .ore:active{
+    transform: scale(1.2); /* Zvětší velikost na 120 % při kliknutí */
+  }
 }
 </style>
