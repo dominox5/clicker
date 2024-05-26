@@ -1,6 +1,8 @@
 <script>
   import InventoryItem from "./reusable/InventoryItem.vue";
   import { useClicker } from '/src/components/stores/store.js';
+  import axeImage from '../assets/images/axe2.svg'
+  import jackhammerImage from "../assets/images/jackhammer.png"
 
   export default {
   components: {
@@ -8,7 +10,9 @@
   },
   data() {
     return {
-      clicker: useClicker()
+      clicker: useClicker(),
+      axeImage,
+      jackhammerImage
     };
   },};
 </script>
@@ -17,10 +21,10 @@
   <div class="inventory">
     <h2>Inventory</h2>
     <div class="items">
-      <InventoryItem name="Axe" image="src/assets/images/axe2.svg" :value="clicker.upgrades.axe"/>
-      <InventoryItem name="Jackhammer" image="src/assets/images/jackhammer.png" :value="clicker.upgrades.jackhammer"/>
-      <InventoryItem name="Axe" image="src/assets/images/axe2.svg" :value="clicker.upgrades.workerWithAxe"/>
-      <InventoryItem name="Jackhammer" image="src/assets/images/jackhammer.png" :value="clicker.upgrades.workerWithJackhammer"/>
+      <InventoryItem name="Axe" :image="axeImage" :value="clicker.upgrades.axe"/>
+      <InventoryItem name="Jackhammer" :image="jackhammerImage" :value="clicker.upgrades.jackhammer"/>
+      <InventoryItem name="Worker with axe" :image="axeImage" :value="clicker.upgrades.workerWithAxe"/>
+      <InventoryItem name="Worker with jackhammer" :image="jackhammerImage" :value="clicker.upgrades.workerWithJackhammer"/>
     </div>
   </div>
 </template>
