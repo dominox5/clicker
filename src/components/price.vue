@@ -1,17 +1,30 @@
-<script setup>
-  
+<script>
+import Modal from "./Exchange.vue";
+import { useClicker } from '/src/components/stores/store.js';
+
+export default {
+  components: {
+    Modal
+  },
+  data() {
+    return {
+      showModal: false,
+      clicker: useClicker()
+    };
+  }
+};
 </script>
 
 <template>
-  <div class="price">
+  <div class="price" @click="showModal = true">
     <img class="gold" src="../assets/images/gold-ingots.svg" alt="">
     <div class="container">
-        <p>1Kg to 70 000$</p>
+        <p>1Kg to {{clicker.exchangeRate}}$</p>
         <img class="arrows" src="../assets/images/change-arrows.svg" alt="">
-        <p>70 000$ to 1Kg</p>
     </div>
     <img class="dollars" src="../assets/images/dollars.svg" alt="">
   </div>
+  <Modal :show="showModal" @close="showModal = false"></Modal>
 </template>
 
 <style scoped>
@@ -23,6 +36,7 @@
     justify-content: space-between;
     text-align: center;
     order: 3;
+    cursor: pointer;
   }
   .gold{
     height: 120px;

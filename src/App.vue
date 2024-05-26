@@ -1,4 +1,5 @@
 <script>
+  import { onMounted } from 'vue'
   import Head from './components/Head.vue'
   import Inventory from './components/Inventory.vue'
   import Pick from './components/Pick.vue'
@@ -6,6 +7,7 @@
   import Score from './components/Score.vue'
   import Settings from './components/Settings.vue'
   import Store from './components/Store.vue'
+  import { useClicker } from '/src/components/stores/store.js';
 
   export default {
   components: {
@@ -17,16 +19,15 @@
     Store,
     Price
   },
-  data(){
-    return{
-      score: 0,
-    };
-  },
-  methods:{
-    plusToScore(){
-      this.score += 1;
-      console.log(this.score)
-    }
+  setup() {
+    onMounted(() => {
+      setInterval(() => {
+        useClicker().random()
+      }, 60000);
+      setInterval(() => {
+        useClicker().passivePeriod()
+    }, 10000);
+    });
   }
 };
 </script>
@@ -35,8 +36,8 @@
   <Head />
   <Price />
   <Inventory />
-  <Pick @plusToScore="plusToScore" />
-  <Score :score="score"/>
+  <Pick />
+  <Score />
   <Settings />
   <Store />
 </template>

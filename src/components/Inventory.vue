@@ -1,18 +1,26 @@
 <script>
   import InventoryItem from "./reusable/InventoryItem.vue";
+  import { useClicker } from '/src/components/stores/store.js';
 
   export default {
   components: {
     InventoryItem
-  }};
+  },
+  data() {
+    return {
+      clicker: useClicker()
+    };
+  },};
 </script>
 
 <template>
   <div class="inventory">
     <h2>Inventory</h2>
     <div class="items">
-      <InventoryItem name="Axe" image="src/assets/images/axe2.svg" :value="0"/>
-      <InventoryItem name="Jackhammer" image="src/assets/images/jackhammer.png" :value="0"/>
+      <InventoryItem name="Axe" image="src/assets/images/axe2.svg" :value="clicker.upgrades.axe"/>
+      <InventoryItem name="Jackhammer" image="src/assets/images/jackhammer.png" :value="clicker.upgrades.jackhammer"/>
+      <InventoryItem name="Axe" image="src/assets/images/axe2.svg" :value="clicker.upgrades.workerWithAxe"/>
+      <InventoryItem name="Jackhammer" image="src/assets/images/jackhammer.png" :value="clicker.upgrades.workerWithJackhammer"/>
     </div>
   </div>
 </template>

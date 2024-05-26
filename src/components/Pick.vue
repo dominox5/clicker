@@ -9,8 +9,9 @@ export default {
   },
   methods: {
     PlusToScore() {
-      this.clicker.balance++;
-      localStorage.setItem('clicker_balance', this.clicker.balance.toString())
+      //this.clicker.balance++;
+      //localStorage.setItem('clicker_balance', this.clicker.balance.toString())
+      this.clicker.increment()
       this.isAxeRotated = !this.isAxeRotated;
       setTimeout(() => {
         this.isAxeRotated = !this.isAxeRotated;

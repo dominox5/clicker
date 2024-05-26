@@ -14,11 +14,11 @@ import { useClicker } from '/src/components/stores/store.js';
   <div class="Score">
     <div class="flex">
       <img src="../assets/images/gold-ingots.svg" alt="">
-      <p>{{clicker.balance}} Kg</p>
+      <p>{{clicker.gold}} Kg</p>
     </div>
     <div class="flex">
       <img src="../assets/images/dollars.svg" alt="">
-      <p>0$</p>
+      <p>{{clicker.money}} $</p>
     </div>
   </div>
 </template>

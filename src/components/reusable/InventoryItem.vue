@@ -37,7 +37,6 @@ export default {
     border-radius: 20px;
     align-items: center;
     justify-content: space-around;
-    cursor: pointer;
   }
   .text{
     color: white;
