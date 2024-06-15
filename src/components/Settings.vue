@@ -1,12 +1,24 @@
-<script setup>
-  
+<script>
+  import Settings from './SettingsComponet.vue'
+
+  export default {
+  components: {
+    Settings
+  },
+  data() {
+    return {
+      showSettings: false
+    };
+  }
+};
 </script>
 
 <template>
   <div class="settings">
-    <img src="../assets/images/gear-solid.svg" alt="">
+    <img src="../assets/images/gear-solid.svg" alt="" @click="showSettings = true">
     <img src="../assets/images/user-solid.svg" alt="">
   </div>
+  <Settings :show="showSettings" @close="showSettings = false"/>
 </template>
 
 <style scoped>

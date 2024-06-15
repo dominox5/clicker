@@ -4,14 +4,19 @@ export default {
   data() {
     return {
       isAxeRotated: false,
-      clicker: useClicker()
+      clicker: useClicker(),
+      audio: null
     };
+  },
+  mounted(){
+    this.audio = new Audio('/src/assets/audio/Pick3.mp3');
   },
   methods: {
     PlusToScore() {
       //this.clicker.balance++;
       //localStorage.setItem('clicker_balance', this.clicker.balance.toString())
       this.clicker.increment()
+      this.audio.play();
       this.isAxeRotated = !this.isAxeRotated;
       setTimeout(() => {
         this.isAxeRotated = !this.isAxeRotated;
